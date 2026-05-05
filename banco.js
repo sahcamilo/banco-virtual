@@ -1,5 +1,5 @@
 // banco.js - Sistema de Banco Virtual
-let nomeBanco = "BANCO DIGITAL"; // <- linha do conflito
+let titulo = "LISTA DE TAREFAS V2";
 let contas = [];
 function criarConta(titular, saldoInicial) {
 let conta = { titular: titular, saldo: saldoInicial, ativa: true };
@@ -46,3 +46,14 @@ criarConta("Bruno Costa", 500);
 depositar(1, 200);
 sacar(2, 100);
 listarContas();
+
+function concluirTarefa(indice) {
+if (indice < 1 || indice > tarefas.length) {
+console.log("Indice invalido."); return;
+}
+tarefas[indice - 1].concluida = true;
+console.log("Concluida: " + tarefas[indice-1].descricao);
+}
+// Teste
+adicionarTarefa("Tarefa C");
+concluirTarefa(1); listarTarefas();
