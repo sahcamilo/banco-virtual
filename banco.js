@@ -59,3 +59,13 @@ console.log("Status : " + (c.ativa ? "Ativa" : "Encerrada"));
 }
 // Teste final
 extrato(1);
+function concluirTarefa(indice) {
+if (indice < 1 || indice > tarefas.length) {
+console.log("Indice invalido."); return;
+}
+tarefas[indice - 1].concluida = true;
+console.log("Concluida: " + tarefas[indice-1].descricao);
+}
+// Teste
+adicionarTarefa("Tarefa C");
+concluirTarefa(1); listarTarefas();
